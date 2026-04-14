@@ -1,0 +1,146 @@
+[
+  {
+    "city": "Pune",
+    "specialization": "Dermatologist",
+    "doctors": [
+      {
+        "name": "Dr. Vijay Nagdev",
+        "experience_years": 15,
+        "rating_percent": 92,
+        "consultation_fee_inr": 800,
+        "clinic_address": "Masulkar Colony, Pune"
+      },
+      {
+        "name": "Dr. Pradeep Kumari",
+        "experience_years": 22,
+        "rating_percent": 95,
+        "consultation_fee_inr": 700,
+        "clinic_address": "Viman Nagar, Pune"
+      },
+      {
+        "name": "Dr. Sonal Chavan",
+        "experience_years": 19,
+        "rating_percent": 90,
+        "consultation_fee_inr": 700,
+        "clinic_address": "Baner, Pune"
+      },
+      {
+        "name": "Dr. Sumit Parsewar",
+        "experience_years": 12,
+        "rating_percent": 98,
+        "consultation_fee_inr": 800,
+        "clinic_address": "Baner, Pune"
+      },
+      {
+        "name": "Dr. Dhananjay Chavan",
+        "experience_years": 38,
+        "rating_percent": 90,
+        "consultation_fee_inr": 1500,
+        "clinic_address": "Dhole Patil Road, Pune"
+      },
+      {
+        "name": "Dr. L K Desai",
+        "experience_years": 30,
+        "rating_percent": 93,
+        "consultation_fee_inr": 700,
+        "clinic_address": "Sassoon Road, Pune"
+      }
+    ]
+  },
+  {
+    "city": "Mumbai",
+    "specialization": "Physiotherapist",
+    "doctors": [
+      {
+        "name": "Dr. Priyanka Sukthankar",
+        "experience_years": 9,
+        "rating_percent": 95,
+        "consultation_fee_inr": 800,
+        "clinic_address": "Andheri East, Mumbai"
+      },
+      {
+        "name": "Dr. Niraj Jha",
+        "experience_years": 19,
+        "rating_percent": 97,
+        "consultation_fee_inr": 1500,
+        "clinic_address": "Chembur, Mumbai"
+      },
+      {
+        "name": "Dr. Monish Mehta",
+        "experience_years": 11,
+        "rating_percent": 100,
+        "consultation_fee_inr": 2000,
+        "clinic_address": "Khar West, Mumbai"
+      },
+      {
+        "name": "Dr. Nidhi Shah",
+        "experience_years": 14,
+        "rating_percent": 100,
+        "consultation_fee_inr": 500,
+        "clinic_address": "Borivali West, Mumbai"
+      },
+      {
+        "name": "Dr. Sanika Pawar",
+        "experience_years": 4,
+        "rating_percent": 100,
+        "consultation_fee_inr": 800,
+        "clinic_address": "Borivali, Mumbai"
+      },
+      {
+        "name": "Ms. Purva Sonegaonkar",
+        "experience_years": 9,
+        "rating_percent": 98,
+        "consultation_fee_inr": 600,
+        "clinic_address": "Mumbai"
+      }
+    ]
+  },
+  {
+    "city": "Bangalore",
+    "specialization": "General Physician",
+    "doctors": [
+      {
+        "name": "Dr. Ravishankar Reddy C R",
+        "experience_years": 32,
+        "rating_percent": 87,
+        "consultation_fee_inr": 1000,
+        "clinic_address": "Koramangala 1 Block, Bangalore"
+      },
+      {
+        "name": "Dr. Vinay Hosadurga",
+        "experience_years": 18,
+        "rating_percent": 100,
+        "consultation_fee_inr": 950,
+        "clinic_address": "Kumaraswamy Layout, Bangalore"
+      },
+      {
+        "name": "Dr. Prashant Dinesh",
+        "experience_years": 23,
+        "rating_percent": 99,
+        "consultation_fee_inr": 700,
+        "clinic_address": "Domlur, Bangalore"
+      },
+      {
+        "name": "Dr. Minakshi Dutta",
+        "experience_years": 47,
+        "rating_percent": 99,
+        "consultation_fee_inr": 500,
+        "clinic_address": "Domlur, Bangalore"
+      },
+      {
+        "name": "Dr. B. Rajashekar",
+        "experience_years": 38,
+        "rating_percent": 84,
+        "consultation_fee_inr": 650,
+        "clinic_address": "Bangalore"
+      },
+      {
+        "name": "Dr. Hina Mehra",
+        "experience_years": 10,
+        "rating_percent": 96,
+        "consultation_fee_inr": 950,
+        "clinic_address": "Bannerghatta Road, Bangalore"
+      }
+    ]
+  }
+]

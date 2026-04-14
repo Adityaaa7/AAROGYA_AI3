@@ -1,0 +1,116 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f8fefb;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+  text-align: center;
+  color: #1f5c49;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+input[type="file"] {
+  padding: 8px;
+}
+
+button {
+  padding: 10px 16px;
+  background-color: #9CFFBD;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #7dedb0;
+}
+
+.summary {
+  margin-top: 30px;
+}
+
+#summaryTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#summaryTable th, #summaryTable td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+#summaryTable th {
+  background-color: #9CFFBD;
+  color: #003e2f;
+}
+
+#summaryTable td {
+  background-color: #f4fff8;
+}
+
+#chatContainer {
+  margin-top: 40px;
+  border-top: 2px solid #d6f5e2;
+  padding-top: 20px;
+}
+
+.chatbox {
+  height: 300px;
+  overflow-y: auto;
+  background: #f2fff5;
+  padding: 15px;
+  border: 1px solid #d0e8d7;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.msg {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.msg.user {
+  text-align: right;
+  color: #1a7f5c;
+  font-weight: bold;
+}
+
+.msg.bot {
+  text-align: left;
+  color: #333;
+}
+
+input#userInput {
+  width: 80%;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+canvas#chart {
+  margin-top: 20px;
+}

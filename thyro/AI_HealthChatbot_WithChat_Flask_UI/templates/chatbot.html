@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Health Chatbot</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>🧬 AI Health Assistant</h1>
+
+    <form id="pdfForm">
+      <input type="file" name="pdf" accept="application/pdf" required>
+      <button type="submit">📊 Analyze Report</button>
+    </form>
+
+    <!-- Summary Section -->
+    <div id="summarySection" class="summary" style="display:none;">
+      <h2>📄 Report Summary</h2>
+      <canvas id="chart" height="250"></canvas>
+      <table id="summaryTable"></table>
+    </div>
+
+    <!-- Chat Section -->
+    <div id="chatContainer">
+      <div class="chatbox" id="chat"></div>
+      <input type="text" id="userInput" placeholder="Ask about a test or condition...">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script>
+    let latestSummary = null;
+    let chartRef = null;
+
+    document.getElementById('pdfForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      try {
+        const res = await fetch("/analyze", { method: "POST", body: formData });
+        const data = await res.json();
+        latestSummary = data.summary;
+        showSummary(latestSummary);
+      } catch (err) {
+        alert("❌ Failed to analyze report. Please check PDF format.");
+        console.error(err);
+      }
+    });
+
+    function showSummary(data) {
+      const ctx = document.getElementById('chart').getContext('2d');
+      const tests = Object.keys(data.values);
+      const values = tests.map(t => data.values[t]);
+      const severity = tests.map(t => data.severity[t]);
+
+      if (chartRef) chartRef.destroy();  // clear old chart
+      chartRef = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: tests,
+          datasets: [{
+            label: 'Lab Values',
+            data: values,
+            backgroundColor: severity.map(s =>
+              s.toLowerCase().includes("low") ? '#ff9999' :
+              s.toLowerCase().includes("high") ? '#ffcc99' : '#9CFFBD')
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: { legend: { display: false } },
+          scales: { y: { beginAtZero: true } }
+        }
+      });
+
+      // Build Summary Table
+      const table = document.getElementById("summaryTable");
+      table.innerHTML = "<tr><th>Test</th><th>Value</th><th>Severity</th></tr>";
+      tests.forEach(t => {
+        const sevClass = data.severity[t].toLowerCase();
+        table.innerHTML += `
+          <tr>
+            <td>${t}</td>
+            <td>${data.values[t]}</td>
+            <td class="${sevClass}">${data.severity[t]}</td>
+          </tr>`;
+      });
+
+      // Show summary section
+      document.getElementById("summarySection").style.display = "block";
+    }
+
+    async function sendMessage() {
+      const input = document.getElementById("userInput");
+      const q = input.value.trim();
+      if (!q) return;
+
+      const chat = document.getElementById("chat");
+      chat.innerHTML += `<div class='msg user'>🧑‍💬 ${q}</div>`;
+
+      try {
+        const res = await fetch("/chat", {
+          method: "POST",
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: q })
+        });
+        const data = await res.json();
+        chat.innerHTML += `<div class='msg bot'>🤖 ${data.reply}</div>`;
+        input.value = "";
+        chat.scrollTop = chat.scrollHeight;
+      } catch (err) {
+        chat.innerHTML += `<div class='msg bot'>❌ Bot error! Please try again.</div>`;
+        console.error(err);
+      }
+    }
+  </script>
+
+</body>
+</html>
