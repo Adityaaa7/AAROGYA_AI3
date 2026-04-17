@@ -60,7 +60,7 @@ Aarogya AI is an intelligent healthcare assistant designed to help users make **
 ![Input](./assets/input1.jpeg)
 
 ### 🔹 Output
-![Output](./assets/input2.png)
+![Output](./assets/input2.jpeg)
 
 ---
 
