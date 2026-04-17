@@ -64,6 +64,17 @@ Aarogya AI is an intelligent healthcare assistant designed to help users make **
 
 ---
 
+## ⚡ How to Run
+
+1. Clone the repo
+git clone https://github.com/Adityaaa7/AAROGYA_AI3
+
+2. Install dependencies
+npm install
+
+3. Run the app
+npm run dev
+
 ## 🔐 Privacy & Design Considerations
 
 - Sensitive medical data is not stored permanently  
